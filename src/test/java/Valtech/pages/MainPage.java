@@ -1,12 +1,10 @@
 package Valtech.pages;
 
 import core.BaseSeleniumPage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import static org.openqa.selenium.By.xpath;
+import readProperties.ConfigProvider;
 
 public class MainPage extends BaseSeleniumPage {
 
@@ -21,7 +19,7 @@ public class MainPage extends BaseSeleniumPage {
     private WebElement theSolutionButton;
 
     public MainPage() {
-        driver.get();
+        driver.get(ConfigProvider.URL);
         PageFactory.initElements(driver,this);
     }
 
