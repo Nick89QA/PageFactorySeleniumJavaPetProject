@@ -14,6 +14,13 @@ public interface ConfigProvider {
     }
 
     String URL = readConfig().getString("url");
-    Integer AGE = readConfig().getInt("age");
+    String FIRST_NAME = readConfig().getString("userParams.testUser.firstName");
+    String LAST_NAME = readConfig().getString("userParams.testUser.lastName");
+    String COMPANY = readConfig().getString("userParams.testUser.company");
+    String COVER_LETTER = readConfig().getString("userParams.testUser.coverLetter");
+
+
+
+
 }
 

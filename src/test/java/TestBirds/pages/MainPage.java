@@ -1,4 +1,4 @@
-package Valtech.pages;
+package TestBirds.pages;
 
 import core.BaseSeleniumPage;
 import org.openqa.selenium.WebElement;
@@ -23,7 +23,7 @@ public class MainPage extends BaseSeleniumPage {
         PageFactory.initElements(driver,this);
     }
 
-    public MainPage visitToWebSite() {
+    public MainPage checkDropDownMenu() {
         solutionsList.click();
         qualityAssuranceList.click();
         theSolutionButton.click();
