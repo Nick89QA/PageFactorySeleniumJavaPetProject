@@ -1,12 +1,14 @@
 package TestBirds.pages;
 
 import core.BaseSeleniumPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import readProperties.ConfigProvider;
 
 public class MainPage extends BaseSeleniumPage {
+
 
 
     @FindBy(xpath = "//*[@id='menu-item-53']")
@@ -18,8 +20,10 @@ public class MainPage extends BaseSeleniumPage {
     @FindBy(xpath = "//*[@href='#the-solution']")
     private WebElement theSolutionButton;
 
+
+
     public MainPage() {
-        driver.get(ConfigProvider.URL);
+        driver.get(ConfigProvider.URL_MAIN_PAGE);
         PageFactory.initElements(driver,this);
     }
 
@@ -29,4 +33,5 @@ public class MainPage extends BaseSeleniumPage {
         theSolutionButton.click();
         return this;
     }
+
 }
