@@ -1,15 +1,10 @@
 package TestBirds.pages;
 
 import core.BaseSeleniumPage;
-import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import readProperties.ConfigProvider;
-import org.openqa.selenium.JavascriptExecutor;
-
-import java.util.Set;
 
 public class ContactUsPage extends BaseSeleniumPage {
 
@@ -24,7 +19,7 @@ public class ContactUsPage extends BaseSeleniumPage {
     @FindBy(xpath = "//*[@id='nf-field-1788']")
     private WebElement inputFieldLastName;
 
-    @FindBy(xpath = "//*[@id='nf-field-1788']")
+    @FindBy(xpath = "//input[@id='nf-field-1792']")
     private WebElement inputFieldCompany;
 
     @FindBy(xpath = "//*[@id='nf-field-1785']")
@@ -44,12 +39,15 @@ public class ContactUsPage extends BaseSeleniumPage {
     }
 
 
-    public  ContactUsPage fillTheForm(String firstNameValue) {
+    public  ContactUsPage fillTheForm(String firstNameValue, String lastNameValue, String companyName,
+                                      String mailValue, String mobilePhoneValue, String coverLetterValue) {
         buttonContactUs.click();
-
-        inputFieldFirstName.click();
         inputFieldFirstName.sendKeys(firstNameValue);
-
+        inputFieldLastName.sendKeys(lastNameValue);
+        inputFieldCompany.sendKeys(companyName);
+        inputFieldEmail.sendKeys(mailValue);
+        inputFieldPhone.sendKeys(mobilePhoneValue);
+        inputFieldCoverLetter.sendKeys(coverLetterValue);
         return this;
 
 
