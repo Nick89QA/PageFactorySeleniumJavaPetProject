@@ -10,7 +10,6 @@ import readProperties.ConfigProvider;
 public class MainPage extends BaseSeleniumPage {
 
 
-
     @FindBy(xpath = "//*[@id='menu-item-53']")
     private WebElement solutionsList;
 
@@ -21,10 +20,9 @@ public class MainPage extends BaseSeleniumPage {
     private WebElement theSolutionButton;
 
 
-
     public MainPage() {
         driver.get(ConfigProvider.URL_MAIN_PAGE);
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
     public MainPage checkDropDownMenu() {
