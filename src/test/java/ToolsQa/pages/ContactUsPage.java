@@ -1,10 +1,7 @@
-package TestBirds.pages;
+package ToolsQa.pages;
 
 import core.BaseSeleniumPage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,8 +10,15 @@ import readProperties.ConfigProvider;
 
 
 public class ContactUsPage extends BaseSeleniumPage {
+    //WebDriver driver = new ChromeDriver();
     WebDriverWait wait = new WebDriverWait(driver, 4);
     JavascriptExecutor js = (JavascriptExecutor) driver;
+
+    Cookie cookie = new Cookie("wp-wpml_current_language", "en");
+
+
+
+
 
 
     @FindBy(xpath = "//*[@id = 'tru_accept_btn']")
@@ -53,17 +57,23 @@ public class ContactUsPage extends BaseSeleniumPage {
         PageFactory.initElements(driver, this);
 
     }
-
+//    public  void cookieHelper() {
+//        driver.manage().addCookie(cookie);
+//
+//    }
 
     /**
      * this method fill the form on Contact Us page
      */
     public ContactUsPage fillTheForm(String firstNameValue, String lastNameValue, String companyName,
-                                     String mailValue, String mobilePhoneValue, String coverLetterValue) {
+                                     String mailValue, String mobilePhoneValue, String coverLetterValue)  {
 
         wait.until(ExpectedConditions.visibilityOf(buttonContactUs)).click();
-        js.executeScript("window.scrollBy(0, 450)");
+        driver.manage().addCookie(cookie);
+       // driver.navigate().to(ConfigProvider.URL_CONTACT_US);
+      //  js.executeScript("window.scrollBy(0, 750)");
         wait.until(ExpectedConditions.visibilityOf(inputFieldFirstName)).sendKeys(firstNameValue);
+
         wait.until(ExpectedConditions.visibilityOf(inputFieldFirstName)).sendKeys(lastNameValue);
         wait.until(ExpectedConditions.visibilityOf(inputFieldCompany)).sendKeys(companyName);
         wait.until(ExpectedConditions.visibilityOf(inputFieldEmail)).sendKeys(mailValue);
