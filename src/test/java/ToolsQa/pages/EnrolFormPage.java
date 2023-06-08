@@ -55,23 +55,27 @@ public class EnrolFormPage extends BaseSeleniumPage {
     /**
      * this method fill the form on Enrol page
      */
-    // String firstNameValue, String lastNameValue, String emailValue,
-    // String mobileValue, String selectCountry, String cityValue
-    public EnrolFormPage fillTheEnrollForm() {
+
+    public EnrolFormPage fillTheEnrollForm(String firstNameValue,
+                                           String lastNameValue, String emailValue,
+                                           String mobileValue, String cityValue, String messageText) {
 
         wait.until(ExpectedConditions.visibilityOf(buttonEnrollYourself)).click();
 
+        js.executeScript("window.scrollTo(200, 0)");
+        wait.until(ExpectedConditions.visibilityOf(inputFieldFirstName)).sendKeys(firstNameValue);
+        wait.until(ExpectedConditions.visibilityOf(inputFieldLastName)).sendKeys(lastNameValue);
+        wait.until(ExpectedConditions.visibilityOf(inputFieldEmail)).sendKeys(emailValue);
+        wait.until(ExpectedConditions.visibilityOf(inputFieldMobile)).sendKeys(mobileValue);
+        wait.until(ExpectedConditions.visibilityOf(inputFieldCity)).click();
+        wait.until(ExpectedConditions.visibilityOf(UnitedKingdomCountry)).click();
+        wait.until(ExpectedConditions.visibilityOf(inputFieldCity)).sendKeys(cityValue);
+        wait.until(ExpectedConditions.visibilityOf(inputFieldYourMessage)).sendKeys(messageText);
 
-//        wait.until(ExpectedConditions.visibilityOf(buttonContactUs)).click();
-//        driver.navigate().to(ConfigProvider.URL_CONTACT_US);
-//        js.executeScript("window.scrollBy(0, 750)");
-//        wait.until(ExpectedConditions.visibilityOf(inputFieldFirstName)).sendKeys(firstNameValue);
-//
-//        wait.until(ExpectedConditions.visibilityOf(inputFieldFirstName)).sendKeys(lastNameValue);
-//        wait.until(ExpectedConditions.visibilityOf(inputFieldCompany)).sendKeys(companyName);
-//        wait.until(ExpectedConditions.visibilityOf(inputFieldEmail)).sendKeys(mailValue);
-//        wait.until(ExpectedConditions.visibilityOf(inputFieldPhone)).sendKeys(mobilePhoneValue);
-//        wait.until(ExpectedConditions.visibilityOf(inputFieldCity)).sendKeys(coverLetterValue);
+
+        js.executeScript("window.scrollTo(0, 200)");
+        js.executeScript("arguments[0].scrollIntoView(true);", inputFieldFirstName);
+
         return this;
     }
 

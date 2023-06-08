@@ -22,7 +22,9 @@ public class ToolsQaTest extends BaseSeleniumTest {
     @Test
     public void fillTheEnrollForm()  {
         EnrolFormPage enrolFormPage = new EnrolFormPage();
-        enrolFormPage.fillTheEnrollForm();
+        enrolFormPage.fillTheEnrollForm(ConfigProvider.FIRST_NAME,
+                ConfigProvider.LAST_NAME, ConfigProvider.EMAIL,
+                ConfigProvider.MOBILE_PHONE,ConfigProvider.CITY, ConfigProvider.COVER_LETTER);
 
     }
     @Test
