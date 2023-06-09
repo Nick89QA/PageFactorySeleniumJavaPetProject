@@ -42,8 +42,8 @@ public class EnrolFormPage extends BaseSeleniumPage {
     private WebElement UnitedKingdomCountry;
 
 
-    //  @FindBy(id = "//*[@id='nf-label-field-1791']")
-    //  private WebElement checkBoxPer
+    @FindBy(xpath = "//button[@class='btn btn-block btn-primary']")
+    private WebElement buttonSend;
 
 
     public EnrolFormPage() {
@@ -71,10 +71,6 @@ public class EnrolFormPage extends BaseSeleniumPage {
         wait.until(ExpectedConditions.visibilityOf(UnitedKingdomCountry)).click();
         wait.until(ExpectedConditions.visibilityOf(inputFieldCity)).sendKeys(cityValue);
         wait.until(ExpectedConditions.visibilityOf(inputFieldYourMessage)).sendKeys(messageText);
-
-
-        js.executeScript("window.scrollTo(0, 200)");
-        js.executeScript("arguments[0].scrollIntoView(true);", inputFieldFirstName);
 
         return this;
     }

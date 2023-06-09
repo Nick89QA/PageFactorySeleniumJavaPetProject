@@ -1,13 +1,19 @@
 package ToolsQa.pages;
 
 import core.BaseSeleniumPage;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import readProperties.ConfigProvider;
 
 public class MainPage extends BaseSeleniumPage {
 
+    WebDriverWait wait = new WebDriverWait(driver, 4);
+    JavascriptExecutor js = (JavascriptExecutor) driver;
 
     @FindBy(xpath = "//div/a[contains(@class, 'new-training__read-more')]")
     private WebElement buttonReadMore;
@@ -27,15 +33,33 @@ public class MainPage extends BaseSeleniumPage {
     @FindBy(xpath = "//div[@class='col-auto']//*[text() = 'Home']")
     private WebElement buttonHome;
 
+    @FindBy(xpath = "//div/form/input[@class='navbar__search--input']")
+    private WebElement inputSearch;
+
+    @FindBy(xpath = "//div[text()='How to handle web tables using testRigor?']")
+    private WebElement articleHowToHandle;
+
+    @FindBy(xpath = "//span[@class='name text-tools-qa-black']")
+    private WebElement matchingElement;
+
+
     public MainPage() {
         driver.get(ConfigProvider.URL_MAIN_PAGE);
         PageFactory.initElements(driver, this);
     }
 
-    public MainPage checkDropDownMenu() {
+
+    public MainPage searchArticle(String searchValue) {
+
+          wait.until(ExpectedConditions.visibilityOf(inputSearch)).sendKeys(Keys.ENTER,searchValue);
+
+        wait.until(ExpectedConditions.visibilityOf(articleHowToHandle)).click();
+        js.executeScript("arguments[0].scrollIntoView(true);", matchingElement);
+        int a = 8;
 
 
         return this;
     }
+
 
 }

@@ -21,7 +21,9 @@ public interface ConfigProvider {
     String MOBILE_PHONE = readConfig().getString("userParams.testUser.phone");
     String COVER_LETTER = readConfig().getString("userParams.testUser.coverLetter");
 
-    String URL_CONTACT_US = readConfig().getString("urlContactUs");
+    String URL_DEMO_PAGE = readConfig().getString("urlDemoPage");
+
+    String SEARCH_KEY_WORD = readConfig().getString("searchKeyWord");
 
 
 }
