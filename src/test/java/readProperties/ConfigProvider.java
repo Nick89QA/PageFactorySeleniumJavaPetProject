@@ -23,7 +23,7 @@ public interface ConfigProvider {
 
     String URL_DEMO_PAGE = readConfig().getString("urlDemoPage");
 
-    String SEARCH_KEY_WORD = readConfig().getString("searchKeyWord");
+    String SEARCH_SELENIUM = readConfig().getString("searchKeyWord");
 
 
 }

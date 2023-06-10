@@ -1,5 +1,4 @@
 package ToolsQa.pages;
-
 import core.BaseSeleniumPage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
@@ -10,7 +9,6 @@ import readProperties.ConfigProvider;
 
 
 public class EnrolFormPage extends BaseSeleniumPage {
-    //WebDriver driver = new ChromeDriver();
     WebDriverWait wait = new WebDriverWait(driver, 4);
     JavascriptExecutor js = (JavascriptExecutor) driver;
 
@@ -49,7 +47,6 @@ public class EnrolFormPage extends BaseSeleniumPage {
     public EnrolFormPage() {
         driver.get(ConfigProvider.URL_MAIN_PAGE);
         PageFactory.initElements(driver, this);
-
     }
 
     /**
@@ -59,9 +56,7 @@ public class EnrolFormPage extends BaseSeleniumPage {
     public EnrolFormPage fillTheEnrollForm(String firstNameValue,
                                            String lastNameValue, String emailValue,
                                            String mobileValue, String cityValue, String messageText) {
-
         wait.until(ExpectedConditions.visibilityOf(buttonEnrollYourself)).click();
-
         js.executeScript("window.scrollTo(200, 0)");
         wait.until(ExpectedConditions.visibilityOf(inputFieldFirstName)).sendKeys(firstNameValue);
         wait.until(ExpectedConditions.visibilityOf(inputFieldLastName)).sendKeys(lastNameValue);
@@ -71,10 +66,8 @@ public class EnrolFormPage extends BaseSeleniumPage {
         wait.until(ExpectedConditions.visibilityOf(UnitedKingdomCountry)).click();
         wait.until(ExpectedConditions.visibilityOf(inputFieldCity)).sendKeys(cityValue);
         wait.until(ExpectedConditions.visibilityOf(inputFieldYourMessage)).sendKeys(messageText);
-
         return this;
     }
-
 
 }
 
