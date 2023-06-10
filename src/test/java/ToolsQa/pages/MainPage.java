@@ -40,7 +40,7 @@ public class MainPage extends BaseSeleniumPage {
     private WebElement articleHowToHandle;
 
     @FindBy(xpath = "//span[@class='name text-tools-qa-black']")
-    private WebElement matchingElement;
+    private WebElement assertAuthorHarishRajora;
 
 
     public MainPage() {
@@ -49,17 +49,12 @@ public class MainPage extends BaseSeleniumPage {
     }
 
 
-    public MainPage searchArticle(String searchValue) {
-
-          wait.until(ExpectedConditions.visibilityOf(inputSearch)).sendKeys(Keys.ENTER,searchValue);
-
+    public MainPage searchArticleOnTheMainPage(String searchValue) {
+        wait.until(ExpectedConditions.visibilityOf(inputSearch)).sendKeys(Keys.ENTER, searchValue);
         wait.until(ExpectedConditions.visibilityOf(articleHowToHandle)).click();
-        js.executeScript("arguments[0].scrollIntoView(true);", matchingElement);
-        int a = 8;
-
-
+        js.executeScript("arguments[0].scrollIntoView(true);", assertAuthorHarishRajora);
+        System.out.println("--Text in this -- " + wait.until(ExpectedConditions.visibilityOf(assertAuthorHarishRajora)).getText());
         return this;
     }
-
 
 }
