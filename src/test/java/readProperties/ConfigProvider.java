@@ -20,10 +20,9 @@ public interface ConfigProvider {
     String EMAIL = readConfig().getString("userParams.testUser.email");
     String MOBILE_PHONE = readConfig().getString("userParams.testUser.phone");
     String COVER_LETTER = readConfig().getString("userParams.testUser.coverLetter");
-
     String URL_DEMO_PAGE = readConfig().getString("urlDemoPage");
-
     String SEARCH_SELENIUM = readConfig().getString("searchKeyWord");
+    String URL_ISTQB_FOUNDATION = readConfig().getString("urlParams.urlIstqbPreparation");
 
 
 }

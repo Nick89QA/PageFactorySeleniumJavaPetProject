@@ -14,6 +14,7 @@ public class ToolsQaTest extends BaseSeleniumTest {
     public void searchSeleniumWord() {
         MainPage mainPage = new MainPage();
         mainPage.searchArticleOnTheMainPage(ConfigProvider.SEARCH_SELENIUM);
+        driver.navigate().back();
     }
 
     /**
@@ -25,7 +26,14 @@ public class ToolsQaTest extends BaseSeleniumTest {
         enrolFormPage.fillTheEnrollForm(ConfigProvider.FIRST_NAME,
                 ConfigProvider.LAST_NAME, ConfigProvider.EMAIL,
                 ConfigProvider.MOBILE_PHONE, ConfigProvider.CITY, ConfigProvider.COVER_LETTER);
+    }
+
+    @Test
+    public void checkDropDownMenu() {
+     MainPage mainPage = new MainPage();
+       mainPage.assertButtonsInDropDownMenu();
 
     }
 
-}
+
+  }

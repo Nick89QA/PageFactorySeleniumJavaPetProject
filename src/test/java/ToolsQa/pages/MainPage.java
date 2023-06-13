@@ -42,19 +42,76 @@ public class MainPage extends BaseSeleniumPage {
     @FindBy(xpath = "//span[@class='name text-tools-qa-black']")
     private WebElement assertAuthorHarishRajora;
 
+    @FindBy(xpath = "//div/a/span[@class='navbar__tutorial-menu--menu-bars']")
+    private WebElement buttonTutorials;
+
+    @FindBy(xpath = "//div/span[text()='QA Practices']")
+    private WebElement buttonQaPractices;
+
+    @FindBy(xpath = "//div/span[text()='Front-End Testing Automation']")
+    private WebElement buttonFrontEndTestingAuto;
+
+    @FindBy(xpath = "//div/span[text()='Back-End Testing Automation']")
+    private WebElement buttonBackEndTestingAuto;
+
+    @FindBy(xpath = "//div/span[text()='Mobile Testing Automation']")
+     private WebElement buttonMobileTestingAutomation;
+
+    @FindBy(xpath = "//div/span[text()='Frameworks & Libraries']")
+    private WebElement buttonFrameworksAndLibraries;
+
+    @FindBy(xpath = "//div/span[text()='DevOps Tools']")
+    private WebElement buttonDevopsTools;
+
+    @FindBy(xpath = "//div/span[text()='Cross Browser Testing']")
+    private WebElement buttonCrossBrowserTesting;
+
+    @FindBy(xpath = "//div/span[text()='Non-Functional Testing']")
+    private WebElement buttonNonFunctionalTesting;
+
+    @FindBy(xpath = "//div/span[text()='Programming Language']")
+    private WebElement buttonProgrammingLanguage;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='ISTQB Preparation']")
+    private WebElement buttonIsqtbPreparation;
+
+
 
     public MainPage() {
         driver.get(ConfigProvider.URL_MAIN_PAGE);
         PageFactory.initElements(driver, this);
     }
 
-
+    /**
+     * this method fill input search selenium article on the search page
+     */
     public MainPage searchArticleOnTheMainPage(String searchValue) {
         wait.until(ExpectedConditions.visibilityOf(inputSearch)).sendKeys(Keys.ENTER, searchValue);
         wait.until(ExpectedConditions.visibilityOf(articleHowToHandle)).click();
         js.executeScript("arguments[0].scrollIntoView(true);", assertAuthorHarishRajora);
-        System.out.println("--Text in this -- " + wait.until(ExpectedConditions.visibilityOf(assertAuthorHarishRajora)).getText());
+        System.out.println("--The author in this article -- " + wait.until(ExpectedConditions.visibilityOf(assertAuthorHarishRajora)).getText());
         return this;
     }
+
+    public MainPage assertButtonsInDropDownMenu () {
+        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
+        wait.until(ExpectedConditions.visibilityOf(buttonQaPractices)).click();
+        buttonIsqtbPreparation.click();
+        driver.manage()compareTo(ConfigProvider.URL_ISTQB_FOUNDATION);
+        driver.navigate().back();
+        System.out.println("Button " + wait.until(ExpectedConditions.visibilityOf(buttonQaPractices)).getText());
+        System.out.println("Button " + wait.until(ExpectedConditions.visibilityOf(buttonFrontEndTestingAuto)).getText());
+        System.out.println("Button " + wait.until(ExpectedConditions.visibilityOf(buttonBackEndTestingAuto)).getText());
+        System.out.println("Button " + wait.until(ExpectedConditions.visibilityOf(buttonMobileTestingAutomation)).getText());
+        System.out.println("Button " + wait.until(ExpectedConditions.visibilityOf(buttonFrameworksAndLibraries)).getText());
+        System.out.println("Button " + wait.until(ExpectedConditions.visibilityOf(buttonDevopsTools)).getText());
+        System.out.println("Button " + wait.until(ExpectedConditions.visibilityOf(buttonCrossBrowserTesting)).getText());
+        System.out.println("Button " + wait.until(ExpectedConditions.visibilityOf(buttonNonFunctionalTesting)).getText());
+        System.out.println("Button " + wait.until(ExpectedConditions.visibilityOf(buttonProgrammingLanguage)).getText());
+        return this;
+    }
+
+
+
 
 }
