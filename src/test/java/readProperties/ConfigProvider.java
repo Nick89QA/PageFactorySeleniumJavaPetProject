@@ -13,6 +13,9 @@ public interface ConfigProvider {
                 : ConfigFactory.load("application.conf");
     }
 
+    /**
+     * enroll form page
+     */
     String URL_MAIN_PAGE = readConfig().getString("urlToolsQa");
     String FIRST_NAME = readConfig().getString("userParams.testUser.firstName");
     String LAST_NAME = readConfig().getString("userParams.testUser.lastName");
@@ -21,8 +24,20 @@ public interface ConfigProvider {
     String MOBILE_PHONE = readConfig().getString("userParams.testUser.phone");
     String COVER_LETTER = readConfig().getString("userParams.testUser.coverLetter");
     String URL_DEMO_PAGE = readConfig().getString("urlDemoPage");
+
+    /**
+     * searching key word
+     */
     String SEARCH_SELENIUM = readConfig().getString("searchKeyWord");
+
+    /**
+     * links from drop down menu "Tutorials" on the main page
+     */
     String URL_ISTQB_FOUNDATION = readConfig().getString("urlParams.urlIstqbPreparation");
+    String URL_SOFTWARE_TESTING = readConfig().getString("urlParams.urlSoftwareTesting");
+    String URL_AGILE_SCRUM = readConfig().getString("urlParams.urlAgileScrum");
+
+
 
 
 }

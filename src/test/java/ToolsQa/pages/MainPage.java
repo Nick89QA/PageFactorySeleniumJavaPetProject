@@ -1,6 +1,7 @@
 package ToolsQa.pages;
 
 import core.BaseSeleniumPage;
+import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -55,7 +56,7 @@ public class MainPage extends BaseSeleniumPage {
     private WebElement buttonBackEndTestingAuto;
 
     @FindBy(xpath = "//div/span[text()='Mobile Testing Automation']")
-     private WebElement buttonMobileTestingAutomation;
+    private WebElement buttonMobileTestingAutomation;
 
     @FindBy(xpath = "//div/span[text()='Frameworks & Libraries']")
     private WebElement buttonFrameworksAndLibraries;
@@ -73,7 +74,28 @@ public class MainPage extends BaseSeleniumPage {
     private WebElement buttonProgrammingLanguage;
 
     @FindBy(xpath = "//div/ul/li/a[@title='ISTQB Preparation']")
-    private WebElement buttonIsqtbPreparation;
+    private WebElement linkIsqtbPreparation;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='Software Testing']")
+    private WebElement linkSoftwareTesting;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='Agile & Scrum']")
+    private WebElement linkAgileScrum;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='Cypress']")
+    private WebElement linkCypress;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='Protractor']")
+    private WebElement linkProtractor;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='Selenium in Java']")
+    private WebElement linkSeleniumInJava;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='TestProject']")
+    private WebElement linkTestProject;
+
+
+
 
 
 
@@ -83,7 +105,7 @@ public class MainPage extends BaseSeleniumPage {
     }
 
     /**
-     * this method fill input search selenium article on the search page
+     * this method fill input search  key word "selenium" and open the article on the search page
      */
     public MainPage searchArticleOnTheMainPage(String searchValue) {
         wait.until(ExpectedConditions.visibilityOf(inputSearch)).sendKeys(Keys.ENTER, searchValue);
@@ -93,14 +115,23 @@ public class MainPage extends BaseSeleniumPage {
         return this;
     }
 
-    public MainPage assertButtonsInDropDownMenu () {
+    public MainPage assertButtonsInDropDownMenu() {
         wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
         wait.until(ExpectedConditions.visibilityOf(buttonQaPractices)).click();
-        buttonIsqtbPreparation.click();
-        driver.manage()compareTo(ConfigProvider.URL_ISTQB_FOUNDATION);
+        wait.until(ExpectedConditions.visibilityOf(linkIsqtbPreparation)).click();
+        Assert.assertEquals("url ISTQB Foundation", ConfigProvider.URL_ISTQB_FOUNDATION, driver.getCurrentUrl());
         driver.navigate().back();
-        System.out.println("Button " + wait.until(ExpectedConditions.visibilityOf(buttonQaPractices)).getText());
-        System.out.println("Button " + wait.until(ExpectedConditions.visibilityOf(buttonFrontEndTestingAuto)).getText());
+        wait.until(ExpectedConditions.visibilityOf(linkSoftwareTesting)).click();
+        Assert.assertEquals("url Software testing", ConfigProvider.URL_SOFTWARE_TESTING,driver.getCurrentUrl());
+        driver.navigate().back();
+        wait.until(ExpectedConditions.visibilityOf(linkAgileScrum)).click();
+        Assert.assertEquals("url AgileScrum", ConfigProvider.URL_AGILE_SCRUM, driver.getCurrentUrl());
+        driver.navigate().back();
+
+        wait.until(ExpectedConditions.visibilityOf(buttonFrontEndTestingAuto)).click();
+
+
+
         System.out.println("Button " + wait.until(ExpectedConditions.visibilityOf(buttonBackEndTestingAuto)).getText());
         System.out.println("Button " + wait.until(ExpectedConditions.visibilityOf(buttonMobileTestingAutomation)).getText());
         System.out.println("Button " + wait.until(ExpectedConditions.visibilityOf(buttonFrameworksAndLibraries)).getText());
@@ -110,8 +141,6 @@ public class MainPage extends BaseSeleniumPage {
         System.out.println("Button " + wait.until(ExpectedConditions.visibilityOf(buttonProgrammingLanguage)).getText());
         return this;
     }
-
-
 
 
 }

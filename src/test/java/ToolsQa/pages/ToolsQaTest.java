@@ -35,5 +35,4 @@ public class ToolsQaTest extends BaseSeleniumTest {
 
     }
 
-
   }
