@@ -118,7 +118,7 @@ public class MainPage extends BaseSeleniumPage {
     }
 
     /**
-     *this method check links in drop down menu Qa practices
+     * this method check links in drop down menu Qa practices
      */
     public MainPage goToLinksInDropDownMenuQaPractices() {
         wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
@@ -140,8 +140,9 @@ public class MainPage extends BaseSeleniumPage {
         wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
         return this;
     }
+
     /**
-     *this method check links in drop down menu Qa practices
+     * this method check links in drop down menu Qa practices
      */
 
     public MainPage goToLinksInDropDownMenuFrontEndTestingAuto() {
@@ -163,7 +164,6 @@ public class MainPage extends BaseSeleniumPage {
         Assert.assertEquals("url SeleniumInJava", ConfigProvider.URL_SELENIUM_IN_JAVA, driver.getCurrentUrl());
         wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
 
-
         wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
         wait.until(ExpectedConditions.visibilityOf(buttonFrontEndTestingAuto)).click();
         wait.until(ExpectedConditions.visibilityOf(linkTestProject)).click();
@@ -184,29 +184,6 @@ public class MainPage extends BaseSeleniumPage {
         return this;
 
     }
-//            System.out.println("Button "+wait.until(ExpectedConditions.visibilityOf(buttonBackEndTestingAuto)).
-//
-//    getText());
-//            System.out.println("Button "+wait.until(ExpectedConditions.visibilityOf(buttonMobileTestingAutomation)).
-//
-//    getText());
-//            System.out.println("Button "+wait.until(ExpectedConditions.visibilityOf(buttonFrameworksAndLibraries)).
-//
-//    getText());
-//            System.out.println("Button "+wait.until(ExpectedConditions.visibilityOf(buttonDevopsTools)).
-//
-//    getText());
-//            System.out.println("Button "+wait.until(ExpectedConditions.visibilityOf(buttonCrossBrowserTesting)).
-//
-//    getText());
-//            System.out.println("Button "+wait.until(ExpectedConditions.visibilityOf(buttonNonFunctionalTesting)).
-//
-//    getText());
-//            System.out.println("Button "+wait.until(ExpectedConditions.visibilityOf(buttonProgrammingLanguage)).
-//
-//    getText());
-
-
 
 
 }

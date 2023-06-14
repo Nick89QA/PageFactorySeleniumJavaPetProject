@@ -44,7 +44,5 @@ public interface ConfigProvider {
     String URL_SELENIUM_C_SHARP = readConfig().getString("links.urlSeleniumCSharp");
 
 
-
-
 }
 
