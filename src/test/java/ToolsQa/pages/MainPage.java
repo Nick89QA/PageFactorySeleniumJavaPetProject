@@ -1,6 +1,7 @@
 package ToolsQa.pages;
 
 import core.BaseSeleniumPage;
+import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -55,7 +56,7 @@ public class MainPage extends BaseSeleniumPage {
     private WebElement buttonBackEndTestingAuto;
 
     @FindBy(xpath = "//div/span[text()='Mobile Testing Automation']")
-     private WebElement buttonMobileTestingAutomation;
+    private WebElement buttonMobileTestingAutomation;
 
     @FindBy(xpath = "//div/span[text()='Frameworks & Libraries']")
     private WebElement buttonFrameworksAndLibraries;
@@ -73,8 +74,31 @@ public class MainPage extends BaseSeleniumPage {
     private WebElement buttonProgrammingLanguage;
 
     @FindBy(xpath = "//div/ul/li/a[@title='ISTQB Preparation']")
-    private WebElement buttonIsqtbPreparation;
+    private WebElement linkIsqtbPreparation;
 
+    @FindBy(xpath = "//div/ul/li/a[@title='Software Testing']")
+    private WebElement linkSoftwareTesting;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='Agile & Scrum']")
+    private WebElement linkAgileScrum;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='Cypress']")
+    private WebElement linkCypress;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='Protractor']")
+    private WebElement linkProtractor;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='Selenium in Java']")
+    private WebElement linkSeleniumInJava;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='TestProject']")
+    private WebElement linkTestProject;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='Katalon Studio']")
+    private WebElement linkKatalonStudio;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='Selenium C Sharp']")
+    private WebElement linkSeleniumCSharp;
 
 
     public MainPage() {
@@ -83,7 +107,7 @@ public class MainPage extends BaseSeleniumPage {
     }
 
     /**
-     * this method fill input search selenium article on the search page
+     * this method fill input search  key word "selenium" and open the article on the search page
      */
     public MainPage searchArticleOnTheMainPage(String searchValue) {
         wait.until(ExpectedConditions.visibilityOf(inputSearch)).sendKeys(Keys.ENTER, searchValue);
@@ -93,23 +117,76 @@ public class MainPage extends BaseSeleniumPage {
         return this;
     }
 
-    public MainPage assertButtonsInDropDownMenu () {
+    public MainPage goToLinksInDropDownMenuQaPractices() {
         wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
         wait.until(ExpectedConditions.visibilityOf(buttonQaPractices)).click();
-        buttonIsqtbPreparation.click();
-        driver.manage()compareTo(ConfigProvider.URL_ISTQB_FOUNDATION);
-        driver.navigate().back();
-        System.out.println("Button " + wait.until(ExpectedConditions.visibilityOf(buttonQaPractices)).getText());
-        System.out.println("Button " + wait.until(ExpectedConditions.visibilityOf(buttonFrontEndTestingAuto)).getText());
-        System.out.println("Button " + wait.until(ExpectedConditions.visibilityOf(buttonBackEndTestingAuto)).getText());
-        System.out.println("Button " + wait.until(ExpectedConditions.visibilityOf(buttonMobileTestingAutomation)).getText());
-        System.out.println("Button " + wait.until(ExpectedConditions.visibilityOf(buttonFrameworksAndLibraries)).getText());
-        System.out.println("Button " + wait.until(ExpectedConditions.visibilityOf(buttonDevopsTools)).getText());
-        System.out.println("Button " + wait.until(ExpectedConditions.visibilityOf(buttonCrossBrowserTesting)).getText());
-        System.out.println("Button " + wait.until(ExpectedConditions.visibilityOf(buttonNonFunctionalTesting)).getText());
-        System.out.println("Button " + wait.until(ExpectedConditions.visibilityOf(buttonProgrammingLanguage)).getText());
+        wait.until(ExpectedConditions.visibilityOf(linkIsqtbPreparation)).click();
+        Assert.assertEquals("url ISTQB Foundation", ConfigProvider.URL_ISTQB_FOUNDATION, driver.getCurrentUrl());
+        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
+
+        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
+        wait.until(ExpectedConditions.visibilityOf(buttonQaPractices)).click();
+        wait.until(ExpectedConditions.visibilityOf(linkSoftwareTesting)).click();
+        Assert.assertEquals("url Software testing", ConfigProvider.URL_SOFTWARE_TESTING, driver.getCurrentUrl());
+        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
+
+        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
+        wait.until(ExpectedConditions.visibilityOf(buttonQaPractices)).click();
+        wait.until(ExpectedConditions.visibilityOf(linkAgileScrum)).click();
+        Assert.assertEquals("url AgileScrum", ConfigProvider.URL_AGILE_SCRUM, driver.getCurrentUrl());
+        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
         return this;
     }
+
+    public MainPage goToLinksInDropDownMenuFrontEndTestingAutomation() {
+        wait.until(ExpectedConditions.visibilityOf(buttonFrontEndTestingAuto)).click();
+        wait.until(ExpectedConditions.visibilityOf(linkCypress)).click();
+        Assert.assertEquals("url Cypress", ConfigProvider.URL_CYPRESS, driver.getCurrentUrl());
+        driver.navigate().back();
+
+        wait.until(ExpectedConditions.visibilityOf(linkProtractor)).click();
+        Assert.assertEquals("url Protractor", ConfigProvider.URL_PROTRACTOR, driver.getCurrentUrl());
+        driver.navigate().back();
+
+        wait.until(ExpectedConditions.visibilityOf(linkSeleniumInJava)).click();
+        Assert.assertEquals("url SeleniumInJava", ConfigProvider.URL_SELENIUM_IN_JAVA, driver.getCurrentUrl());
+        driver.navigate().back();
+
+        wait.until(ExpectedConditions.visibilityOf(linkTestProject)).click();
+        Assert.assertEquals("url TestProject", ConfigProvider.URL_TEST_PROJECT, driver.getCurrentUrl());
+        driver.navigate().back();
+
+        wait.until(ExpectedConditions.visibilityOf(linkKatalonStudio)).click();
+        Assert.assertEquals("url linkKatalonStudio", ConfigProvider.URL_KATALON_STUDIO, driver.getCurrentUrl());
+        driver.navigate().back();
+
+        wait.until(ExpectedConditions.visibilityOf(linkSeleniumCSharp)).click();
+        Assert.assertEquals("url SeleniumCSharp", ConfigProvider.URL_SELENIUM_C_SHARP, driver.getCurrentUrl());
+        driver.navigate().back();
+        return this;
+
+    }
+//            System.out.println("Button "+wait.until(ExpectedConditions.visibilityOf(buttonBackEndTestingAuto)).
+//
+//    getText());
+//            System.out.println("Button "+wait.until(ExpectedConditions.visibilityOf(buttonMobileTestingAutomation)).
+//
+//    getText());
+//            System.out.println("Button "+wait.until(ExpectedConditions.visibilityOf(buttonFrameworksAndLibraries)).
+//
+//    getText());
+//            System.out.println("Button "+wait.until(ExpectedConditions.visibilityOf(buttonDevopsTools)).
+//
+//    getText());
+//            System.out.println("Button "+wait.until(ExpectedConditions.visibilityOf(buttonCrossBrowserTesting)).
+//
+//    getText());
+//            System.out.println("Button "+wait.until(ExpectedConditions.visibilityOf(buttonNonFunctionalTesting)).
+//
+//    getText());
+//            System.out.println("Button "+wait.until(ExpectedConditions.visibilityOf(buttonProgrammingLanguage)).
+//
+//    getText());
 
 
 
