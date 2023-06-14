@@ -117,6 +117,9 @@ public class MainPage extends BaseSeleniumPage {
         return this;
     }
 
+    /**
+     *this method check links in drop down menu Qa practices
+     */
     public MainPage goToLinksInDropDownMenuQaPractices() {
         wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
         wait.until(ExpectedConditions.visibilityOf(buttonQaPractices)).click();
@@ -137,32 +140,47 @@ public class MainPage extends BaseSeleniumPage {
         wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
         return this;
     }
+    /**
+     *this method check links in drop down menu Qa practices
+     */
 
-    public MainPage goToLinksInDropDownMenuFrontEndTestingAutomation() {
+    public MainPage goToLinksInDropDownMenuFrontEndTestingAuto() {
+        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
         wait.until(ExpectedConditions.visibilityOf(buttonFrontEndTestingAuto)).click();
         wait.until(ExpectedConditions.visibilityOf(linkCypress)).click();
         Assert.assertEquals("url Cypress", ConfigProvider.URL_CYPRESS, driver.getCurrentUrl());
-        driver.navigate().back();
+        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
 
+        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
+        wait.until(ExpectedConditions.visibilityOf(buttonFrontEndTestingAuto)).click();
         wait.until(ExpectedConditions.visibilityOf(linkProtractor)).click();
         Assert.assertEquals("url Protractor", ConfigProvider.URL_PROTRACTOR, driver.getCurrentUrl());
-        driver.navigate().back();
+        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
 
+        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
+        wait.until(ExpectedConditions.visibilityOf(buttonFrontEndTestingAuto)).click();
         wait.until(ExpectedConditions.visibilityOf(linkSeleniumInJava)).click();
         Assert.assertEquals("url SeleniumInJava", ConfigProvider.URL_SELENIUM_IN_JAVA, driver.getCurrentUrl());
-        driver.navigate().back();
+        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
 
+
+        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
+        wait.until(ExpectedConditions.visibilityOf(buttonFrontEndTestingAuto)).click();
         wait.until(ExpectedConditions.visibilityOf(linkTestProject)).click();
         Assert.assertEquals("url TestProject", ConfigProvider.URL_TEST_PROJECT, driver.getCurrentUrl());
-        driver.navigate().back();
+        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
 
+        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
+        wait.until(ExpectedConditions.visibilityOf(buttonFrontEndTestingAuto)).click();
         wait.until(ExpectedConditions.visibilityOf(linkKatalonStudio)).click();
         Assert.assertEquals("url linkKatalonStudio", ConfigProvider.URL_KATALON_STUDIO, driver.getCurrentUrl());
-        driver.navigate().back();
+        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
 
+        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
+        wait.until(ExpectedConditions.visibilityOf(buttonFrontEndTestingAuto)).click();
         wait.until(ExpectedConditions.visibilityOf(linkSeleniumCSharp)).click();
         Assert.assertEquals("url SeleniumCSharp", ConfigProvider.URL_SELENIUM_C_SHARP, driver.getCurrentUrl());
-        driver.navigate().back();
+        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
         return this;
 
     }
