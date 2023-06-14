@@ -1,6 +1,4 @@
 package ToolsQa.pages;
-
-
 import core.BaseSeleniumTest;
 import org.junit.Test;
 import readProperties.ConfigProvider;
@@ -30,11 +28,11 @@ public class ToolsQaTest extends BaseSeleniumTest {
 
     @Test
     public void checkAllTheLinksInDropDownMenu() {
-     MainPage mainPage = new MainPage();
-       mainPage.goToLinksInDropDownMenuQaPractices();
-       mainPage.goToLinksInDropDownMenuFrontEndTestingAuto();
+        MainPage mainPage = new MainPage();
+        mainPage.goToLinksInDropDownMenuQaPractices();
+        mainPage.goToLinksInDropDownMenuFrontEndTestingAuto();
 
 
     }
 
-  }
+}

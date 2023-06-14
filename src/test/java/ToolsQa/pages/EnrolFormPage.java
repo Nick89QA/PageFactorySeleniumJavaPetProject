@@ -1,4 +1,5 @@
 package ToolsQa.pages;
+
 import core.BaseSeleniumPage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
