@@ -33,9 +33,15 @@ public interface ConfigProvider {
     /**
      * links from drop down menu "Tutorials" on the main page
      */
-    String URL_ISTQB_FOUNDATION = readConfig().getString("urlParams.urlIstqbPreparation");
-    String URL_SOFTWARE_TESTING = readConfig().getString("urlParams.urlSoftwareTesting");
-    String URL_AGILE_SCRUM = readConfig().getString("urlParams.urlAgileScrum");
+    String URL_ISTQB_FOUNDATION = readConfig().getString("links.urlIstqbPreparation");
+    String URL_SOFTWARE_TESTING = readConfig().getString("links.urlSoftwareTesting");
+    String URL_AGILE_SCRUM = readConfig().getString("links.urlAgileScrum");
+    String URL_CYPRESS = readConfig().getString("links.urlCypress");
+    String URL_PROTRACTOR = readConfig().getString("links.urlProtractor");
+    String URL_SELENIUM_IN_JAVA = readConfig().getString("links.urlSeleniumInJava");
+    String URL_TEST_PROJECT = readConfig().getString("links.urlTestProject");
+    String URL_KATALON_STUDIO = readConfig().getString("links.urlKatalonStudio");
+    String URL_SELENIUM_C_SHARP = readConfig().getString("links.urlSeleniumCSharp");
 
 
 

@@ -29,9 +29,10 @@ public class ToolsQaTest extends BaseSeleniumTest {
     }
 
     @Test
-    public void checkDropDownMenu() {
+    public void checkLinksInDropDownMenu() {
      MainPage mainPage = new MainPage();
-       mainPage.assertButtonsInDropDownMenu();
+       mainPage.goToLinksInDropDownMenuQaPractices();
+
 
     }
 
