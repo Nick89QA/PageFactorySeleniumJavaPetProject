@@ -42,6 +42,10 @@ public interface ConfigProvider {
     String URL_TEST_PROJECT = readConfig().getString("links.urlTestProject");
     String URL_KATALON_STUDIO = readConfig().getString("links.urlKatalonStudio");
     String URL_SELENIUM_C_SHARP = readConfig().getString("links.urlSeleniumCSharp");
+    String URL_REST_ASSURED = readConfig().getString("links.urlRestAssured");
+    String URL_POSTMAN = readConfig().getString("links.urlPostman");
+    String URL_SOAPUI = readConfig().getString("links.urlSoapUi");
+
 
 
 }

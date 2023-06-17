@@ -100,6 +100,18 @@ public class MainPage extends BaseSeleniumPage {
     @FindBy(xpath = "//div/ul/li/a[@title='Selenium C Sharp']")
     private WebElement linkSeleniumCSharp;
 
+    @FindBy(xpath = "//div/ul/li/a[@title='Rest Assured']")
+    private WebElement linkRestAssured;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='Postman']")
+    private WebElement linkPostman;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='SOAPUI']")
+    private WebElement linkSoapUi;
+
+
+
+
 
     public MainPage() {
         driver.get(ConfigProvider.URL_MAIN_PAGE);
@@ -184,6 +196,38 @@ public class MainPage extends BaseSeleniumPage {
         return this;
 
     }
+
+    public MainPage goToLinksInDropDownMenuBackEndTestAuto() {
+        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
+        wait.until(ExpectedConditions.visibilityOf(buttonBackEndTestingAuto)).click();
+        wait.until(ExpectedConditions.visibilityOf(linkRestAssured)).click();
+        Assert.assertEquals("url RestAssured", ConfigProvider.URL_REST_ASSURED, driver.getCurrentUrl());
+        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
+
+        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
+        wait.until(ExpectedConditions.visibilityOf(buttonBackEndTestingAuto)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkPostman)).click();
+        Assert.assertEquals("url Postman", ConfigProvider.URL_POSTMAN, driver.getCurrentUrl());
+        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
+
+        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
+        wait.until(ExpectedConditions.visibilityOf(buttonBackEndTestingAuto)).click();
+        wait.until(ExpectedConditions.visibilityOf(linkSoapUi)).click();
+        Assert.assertEquals("url SoapUi", ConfigProvider.URL_SOAPUI, driver.getCurrentUrl());
+        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
+
+
+
+
+
+
+
+
+
+
+        return this;
+    }
+
 
 
 }
