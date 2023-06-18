@@ -11,6 +11,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import readProperties.ConfigProvider;
 
+import java.security.PublicKey;
+
 public class MainPage extends BaseSeleniumPage {
 
     WebDriverWait wait = new WebDriverWait(driver, 4);
@@ -72,7 +74,9 @@ public class MainPage extends BaseSeleniumPage {
 
     @FindBy(xpath = "//div/span[text()='Programming Language']")
     private WebElement buttonProgrammingLanguage;
-
+    /**
+     * Links from drop down menu
+     */
     @FindBy(xpath = "//div/ul/li/a[@title='ISTQB Preparation']")
     private WebElement linkIsqtbPreparation;
 
@@ -111,6 +115,22 @@ public class MainPage extends BaseSeleniumPage {
 
     @FindBy(xpath = "//div/ul/li/a[@title='Appium Studio']")
     private WebElement linkAppiumStudio;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='Cucumber']")
+    private WebElement linkCucumber;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='SpecFlow']")
+    private WebElement linkSpecFlow;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='Junit']")
+    private WebElement linkJunit;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='TestNG']")
+    private WebElement linkTestNG;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='Extent report - Cucumber (TestNG)']")
+    private WebElement linkCucumberTestNg;
+
 
 
     public MainPage() {
@@ -231,6 +251,20 @@ public class MainPage extends BaseSeleniumPage {
         wait.until(ExpectedConditions.visibilityOf(linkAppiumStudio)).click();
         Assert.assertEquals("url Appium Studio", ConfigProvider.URL_APPIUM_STUDIO, driver.getCurrentUrl());
         wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
+        return this;
+    }
+
+    /**
+     * this method check links in drop down menu Frameworks&Libraries
+     */
+
+    public MainPage goToLinkInDropDownMenuFrameworksLibraries() {
+        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
+        wait.until(ExpectedConditions.visibilityOf(buttonFrameworksAndLibraries)).click();
+        wait.until(ExpectedConditions.visibilityOf(linkCucumber)).click();
+        Assert.assertEquals("url Cucumber", ConfigProvider.URL_APPIUM_STUDIO, driver.getCurrentUrl());
+
+
         return this;
     }
 
