@@ -109,8 +109,8 @@ public class MainPage extends BaseSeleniumPage {
     @FindBy(xpath = "//div/ul/li/a[@title='SOAPUI']")
     private WebElement linkSoapUi;
 
-
-
+    @FindBy(xpath = "//div/ul/li/a[@title='Appium Studio']")
+    private WebElement linkAppiumStudio;
 
 
     public MainPage() {
@@ -154,7 +154,7 @@ public class MainPage extends BaseSeleniumPage {
     }
 
     /**
-     * this method check links in drop down menu Qa practices
+     * this method check links in drop down menu FrontEndAuto
      */
 
     public MainPage goToLinksInDropDownMenuFrontEndTestingAuto() {
@@ -197,6 +197,10 @@ public class MainPage extends BaseSeleniumPage {
 
     }
 
+    /**
+     * this method check links in drop down menu BackEndTestAuto
+     */
+
     public MainPage goToLinksInDropDownMenuBackEndTestAuto() {
         wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
         wait.until(ExpectedConditions.visibilityOf(buttonBackEndTestingAuto)).click();
@@ -215,10 +219,19 @@ public class MainPage extends BaseSeleniumPage {
         wait.until(ExpectedConditions.visibilityOf(linkSoapUi)).click();
         Assert.assertEquals("url SoapUi", ConfigProvider.URL_SOAPUI, driver.getCurrentUrl());
         wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
-
         return this;
     }
 
-
+    /**
+     * this method check links in drop down menu MobileTestAuto
+     */
+    public MainPage goToLinkInDropDownMenuMobileTestAuto() {
+        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
+        wait.until(ExpectedConditions.visibilityOf(buttonMobileTestingAutomation)).click();
+        wait.until(ExpectedConditions.visibilityOf(linkAppiumStudio)).click();
+        Assert.assertEquals("url Appium Studio", ConfigProvider.URL_APPIUM_STUDIO, driver.getCurrentUrl());
+        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
+        return this;
+    }
 
 }

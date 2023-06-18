@@ -31,6 +31,9 @@ public class ToolsQaTest extends BaseSeleniumTest {
         MainPage mainPage = new MainPage();
         mainPage.goToLinksInDropDownMenuQaPractices();
         mainPage.goToLinksInDropDownMenuFrontEndTestingAuto();
+        mainPage.goToLinksInDropDownMenuBackEndTestAuto();
+        mainPage.goToLinkInDropDownMenuMobileTestAuto();
+
 
 
     }

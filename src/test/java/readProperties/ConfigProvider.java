@@ -45,6 +45,8 @@ public interface ConfigProvider {
     String URL_REST_ASSURED = readConfig().getString("links.urlRestAssured");
     String URL_POSTMAN = readConfig().getString("links.urlPostman");
     String URL_SOAPUI = readConfig().getString("links.urlSoapUi");
+    String URL_APPIUM_STUDIO = readConfig().getString("links.urlAppiumStudio");
+
 
 
 
