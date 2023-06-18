@@ -216,15 +216,6 @@ public class MainPage extends BaseSeleniumPage {
         Assert.assertEquals("url SoapUi", ConfigProvider.URL_SOAPUI, driver.getCurrentUrl());
         wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
 
-
-
-
-
-
-
-
-
-
         return this;
     }
 
