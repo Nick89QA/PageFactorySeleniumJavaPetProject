@@ -46,6 +46,12 @@ public interface ConfigProvider {
     String URL_POSTMAN = readConfig().getString("links.urlPostman");
     String URL_SOAPUI = readConfig().getString("links.urlSoapUi");
     String URL_APPIUM_STUDIO = readConfig().getString("links.urlAppiumStudio");
+    String URL_CUCUMBER = readConfig().getString("links.urlCucumber");
+    String URL_TESTNG = readConfig().getString("links.urlTestNG");
+    String URL_SPECFLOW = readConfig().getString("links.urlSpecFlow");
+    String URL_JUNIT = readConfig().getString("links.urlJunit");
+    String URL_REPORT_FOR_CUCUMBER = readConfig().getString("links.urlReportForCucumber");
+
 
 
 
