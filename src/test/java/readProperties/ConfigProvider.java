@@ -51,6 +51,9 @@ public interface ConfigProvider {
     String URL_SPECFLOW = readConfig().getString("links.urlSpecFlow");
     String URL_JUNIT = readConfig().getString("links.urlJunit");
     String URL_REPORT_FOR_CUCUMBER = readConfig().getString("links.urlReportForCucumber");
+    String URL_MAVEN = readConfig().getString("links.urlMaven");
+    String URL_GIT = readConfig().getString("links.urlGit");
+    String URL_DOCKER = readConfig().getString("links.urlDocker");
 
 
 

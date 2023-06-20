@@ -307,10 +307,20 @@ public class MainPage extends BaseSeleniumPage {
         wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
         wait.until(ExpectedConditions.elementToBeClickable(buttonDevopsTools)).click();
         wait.until(ExpectedConditions.elementToBeClickable(linkMaven)).click();
-        Assert.assertEquals("url Maven", ConfigProvider.URL_APPIUM_STUDIO, driver.getCurrentUrl());
-        wait.until(ExpectedConditions.elementToBeClickable(linkMaven)).click();
+        Assert.assertEquals("url Maven", ConfigProvider.URL_MAVEN, driver.getCurrentUrl());
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
 
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonDevopsTools)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkGit)).click();
+        Assert.assertEquals("url Git", ConfigProvider.URL_GIT, driver.getCurrentUrl());
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
 
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonDevopsTools)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkDocker)).click();
+        Assert.assertEquals("url Docker", ConfigProvider.URL_DOCKER, driver.getCurrentUrl());
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
         return this;
     }
 

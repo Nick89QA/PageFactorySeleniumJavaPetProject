@@ -33,6 +33,8 @@ public class ToolsQaTest extends BaseSeleniumTest {
         mainPage.goToLinksInDropDownMenuFrontEndTestingAuto();
         mainPage.goToLinksInDropDownMenuBackEndTestAuto();
         mainPage.goToLinkInDropDownMenuMobileTestAuto();
+        mainPage.goToLinkInDropDownMenuFrameworksLibraries();
+        mainPage.goToLinkInDropDownMenuDevopsTools();
 
 
 
