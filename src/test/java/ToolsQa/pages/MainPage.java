@@ -131,6 +131,14 @@ public class MainPage extends BaseSeleniumPage {
     @FindBy(xpath = "//div/ul/li/a[@title='Extent report - Cucumber (TestNG)']")
     private WebElement linkCucumberTestNg;
 
+    @FindBy(xpath = "//div/ul/li/a[@title='Maven']")
+    private WebElement linkMaven;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='Git']")
+    private WebElement linkGit;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='Docker']")
+    private WebElement linkDocker;
 
 
     public MainPage() {
@@ -142,34 +150,34 @@ public class MainPage extends BaseSeleniumPage {
      * this method fill input search  key word "selenium" and open the article on the search page
      */
     public MainPage searchArticleOnTheMainPage(String searchValue) {
-        wait.until(ExpectedConditions.visibilityOf(inputSearch)).sendKeys(Keys.ENTER, searchValue);
-        wait.until(ExpectedConditions.visibilityOf(articleHowToHandle)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(inputSearch)).sendKeys(Keys.ENTER, searchValue);
+        wait.until(ExpectedConditions.elementToBeClickable(articleHowToHandle)).click();
         js.executeScript("arguments[0].scrollIntoView(true);", assertAuthorHarishRajora);
         System.out.println("--The author in this article -- " + wait.until(ExpectedConditions.visibilityOf(assertAuthorHarishRajora)).getText());
         return this;
     }
 
     /**
-     * this method check links in drop down menu Qa practices
+     * this method check links in drop down menu  Qa practices
      */
     public MainPage goToLinksInDropDownMenuQaPractices() {
-        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
-        wait.until(ExpectedConditions.visibilityOf(buttonQaPractices)).click();
-        wait.until(ExpectedConditions.visibilityOf(linkIsqtbPreparation)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonQaPractices)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkIsqtbPreparation)).click();
         Assert.assertEquals("url ISTQB Foundation", ConfigProvider.URL_ISTQB_FOUNDATION, driver.getCurrentUrl());
-        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
 
-        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
-        wait.until(ExpectedConditions.visibilityOf(buttonQaPractices)).click();
-        wait.until(ExpectedConditions.visibilityOf(linkSoftwareTesting)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonQaPractices)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkSoftwareTesting)).click();
         Assert.assertEquals("url Software testing", ConfigProvider.URL_SOFTWARE_TESTING, driver.getCurrentUrl());
-        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
 
-        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
-        wait.until(ExpectedConditions.visibilityOf(buttonQaPractices)).click();
-        wait.until(ExpectedConditions.visibilityOf(linkAgileScrum)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonQaPractices)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkAgileScrum)).click();
         Assert.assertEquals("url AgileScrum", ConfigProvider.URL_AGILE_SCRUM, driver.getCurrentUrl());
-        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
         return this;
     }
 
@@ -178,41 +186,41 @@ public class MainPage extends BaseSeleniumPage {
      */
 
     public MainPage goToLinksInDropDownMenuFrontEndTestingAuto() {
-        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
-        wait.until(ExpectedConditions.visibilityOf(buttonFrontEndTestingAuto)).click();
-        wait.until(ExpectedConditions.visibilityOf(linkCypress)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonFrontEndTestingAuto)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkCypress)).click();
         Assert.assertEquals("url Cypress", ConfigProvider.URL_CYPRESS, driver.getCurrentUrl());
-        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
 
-        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
-        wait.until(ExpectedConditions.visibilityOf(buttonFrontEndTestingAuto)).click();
-        wait.until(ExpectedConditions.visibilityOf(linkProtractor)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonFrontEndTestingAuto)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkProtractor)).click();
         Assert.assertEquals("url Protractor", ConfigProvider.URL_PROTRACTOR, driver.getCurrentUrl());
-        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
 
-        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
-        wait.until(ExpectedConditions.visibilityOf(buttonFrontEndTestingAuto)).click();
-        wait.until(ExpectedConditions.visibilityOf(linkSeleniumInJava)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonFrontEndTestingAuto)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkSeleniumInJava)).click();
         Assert.assertEquals("url SeleniumInJava", ConfigProvider.URL_SELENIUM_IN_JAVA, driver.getCurrentUrl());
-        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
 
-        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
-        wait.until(ExpectedConditions.visibilityOf(buttonFrontEndTestingAuto)).click();
-        wait.until(ExpectedConditions.visibilityOf(linkTestProject)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonFrontEndTestingAuto)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkTestProject)).click();
         Assert.assertEquals("url TestProject", ConfigProvider.URL_TEST_PROJECT, driver.getCurrentUrl());
-        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
 
-        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
-        wait.until(ExpectedConditions.visibilityOf(buttonFrontEndTestingAuto)).click();
-        wait.until(ExpectedConditions.visibilityOf(linkKatalonStudio)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonFrontEndTestingAuto)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkKatalonStudio)).click();
         Assert.assertEquals("url linkKatalonStudio", ConfigProvider.URL_KATALON_STUDIO, driver.getCurrentUrl());
-        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
 
-        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
-        wait.until(ExpectedConditions.visibilityOf(buttonFrontEndTestingAuto)).click();
-        wait.until(ExpectedConditions.visibilityOf(linkSeleniumCSharp)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonFrontEndTestingAuto)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkSeleniumCSharp)).click();
         Assert.assertEquals("url SeleniumCSharp", ConfigProvider.URL_SELENIUM_C_SHARP, driver.getCurrentUrl());
-        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
         return this;
 
     }
@@ -222,23 +230,23 @@ public class MainPage extends BaseSeleniumPage {
      */
 
     public MainPage goToLinksInDropDownMenuBackEndTestAuto() {
-        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
-        wait.until(ExpectedConditions.visibilityOf(buttonBackEndTestingAuto)).click();
-        wait.until(ExpectedConditions.visibilityOf(linkRestAssured)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonBackEndTestingAuto)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkRestAssured)).click();
         Assert.assertEquals("url RestAssured", ConfigProvider.URL_REST_ASSURED, driver.getCurrentUrl());
-        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
 
-        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
-        wait.until(ExpectedConditions.visibilityOf(buttonBackEndTestingAuto)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonBackEndTestingAuto)).click();
         wait.until(ExpectedConditions.elementToBeClickable(linkPostman)).click();
         Assert.assertEquals("url Postman", ConfigProvider.URL_POSTMAN, driver.getCurrentUrl());
-        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
 
-        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
-        wait.until(ExpectedConditions.visibilityOf(buttonBackEndTestingAuto)).click();
-        wait.until(ExpectedConditions.visibilityOf(linkSoapUi)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonBackEndTestingAuto)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkSoapUi)).click();
         Assert.assertEquals("url SoapUi", ConfigProvider.URL_SOAPUI, driver.getCurrentUrl());
-        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
         return this;
     }
 
@@ -246,11 +254,11 @@ public class MainPage extends BaseSeleniumPage {
      * this method check links in drop down menu MobileTestAuto
      */
     public MainPage goToLinkInDropDownMenuMobileTestAuto() {
-        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
-        wait.until(ExpectedConditions.visibilityOf(buttonMobileTestingAutomation)).click();
-        wait.until(ExpectedConditions.visibilityOf(linkAppiumStudio)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonMobileTestingAutomation)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkAppiumStudio)).click();
         Assert.assertEquals("url Appium Studio", ConfigProvider.URL_APPIUM_STUDIO, driver.getCurrentUrl());
-        wait.until(ExpectedConditions.visibilityOf(buttonHome)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
         return this;
     }
 
@@ -259,13 +267,52 @@ public class MainPage extends BaseSeleniumPage {
      */
 
     public MainPage goToLinkInDropDownMenuFrameworksLibraries() {
-        wait.until(ExpectedConditions.visibilityOf(buttonTutorials)).click();
-        wait.until(ExpectedConditions.visibilityOf(buttonFrameworksAndLibraries)).click();
-        wait.until(ExpectedConditions.visibilityOf(linkCucumber)).click();
-        Assert.assertEquals("url Cucumber", ConfigProvider.URL_APPIUM_STUDIO, driver.getCurrentUrl());
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonFrameworksAndLibraries)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkCucumber)).click();
+        Assert.assertEquals("url Cucumber", ConfigProvider.URL_CUCUMBER, driver.getCurrentUrl());
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonFrameworksAndLibraries)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkTestNG)).click();
+        Assert.assertEquals("url TestNg", ConfigProvider.URL_TESTNG, driver.getCurrentUrl());
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonFrameworksAndLibraries)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkSpecFlow)).click();
+        Assert.assertEquals("url SpecFlow", ConfigProvider.URL_SPECFLOW, driver.getCurrentUrl());
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonFrameworksAndLibraries)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkJunit)).click();
+        Assert.assertEquals("url Junit", ConfigProvider.URL_JUNIT, driver.getCurrentUrl());
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonFrameworksAndLibraries)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkCucumberTestNg)).click();
+        Assert.assertEquals("url Extent report", ConfigProvider.URL_REPORT_FOR_CUCUMBER, driver.getCurrentUrl());
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
+        return this;
+    }
+
+    /**
+     * this method check links in drop down menu Devops Tools
+     */
+
+    public MainPage goToLinkInDropDownMenuDevopsTools() {
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonDevopsTools)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkMaven)).click();
+        Assert.assertEquals("url Maven", ConfigProvider.URL_APPIUM_STUDIO, driver.getCurrentUrl());
+        wait.until(ExpectedConditions.elementToBeClickable(linkMaven)).click();
 
 
         return this;
     }
+
 
 }
