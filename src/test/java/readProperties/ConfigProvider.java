@@ -54,6 +54,9 @@ public interface ConfigProvider {
     String URL_MAVEN = readConfig().getString("links.urlMaven");
     String URL_GIT = readConfig().getString("links.urlGit");
     String URL_DOCKER = readConfig().getString("links.urlDocker");
+    String URL_LAMBDA_TEST = readConfig().getString("links.linkLambdaTest");
+    String URL_CROSS_BROWSER_TESTING = readConfig().getString("links.linkCrossBrowserTesting");
+    String URL_BROWSELING = readConfig().getString("links.linkBrowserling");
 
 
 

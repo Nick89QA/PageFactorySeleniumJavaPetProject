@@ -11,8 +11,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import readProperties.ConfigProvider;
 
-import java.security.PublicKey;
-
 public class MainPage extends BaseSeleniumPage {
 
     WebDriverWait wait = new WebDriverWait(driver, 4);
@@ -140,6 +138,15 @@ public class MainPage extends BaseSeleniumPage {
     @FindBy(xpath = "//div/ul/li/a[@title='Docker']")
     private WebElement linkDocker;
 
+    @FindBy(xpath = "//div/ul/li/a[@title='LambdaTest']")
+    private WebElement linkLambdaTest;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='Cross Browser Testing - Smartbear']")
+    private WebElement linkCrossBrowserTestingSmartBear;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='Browserling']")
+    private WebElement linkBrowserling;
+
 
     public MainPage() {
         driver.get(ConfigProvider.URL_MAIN_PAGE);
@@ -160,7 +167,7 @@ public class MainPage extends BaseSeleniumPage {
     /**
      * this method check links in drop down menu  Qa practices
      */
-    public MainPage goToLinksInDropDownMenuQaPractices() {
+    public MainPage checkLinksInDropDownMenuQaPractices() {
         wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
         wait.until(ExpectedConditions.elementToBeClickable(buttonQaPractices)).click();
         wait.until(ExpectedConditions.elementToBeClickable(linkIsqtbPreparation)).click();
@@ -185,7 +192,7 @@ public class MainPage extends BaseSeleniumPage {
      * this method check links in drop down menu FrontEndAuto
      */
 
-    public MainPage goToLinksInDropDownMenuFrontEndTestingAuto() {
+    public MainPage checkLinksInDropDownMenuFrontEndTestingAuto() {
         wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
         wait.until(ExpectedConditions.elementToBeClickable(buttonFrontEndTestingAuto)).click();
         wait.until(ExpectedConditions.elementToBeClickable(linkCypress)).click();
@@ -229,7 +236,7 @@ public class MainPage extends BaseSeleniumPage {
      * this method check links in drop down menu BackEndTestAuto
      */
 
-    public MainPage goToLinksInDropDownMenuBackEndTestAuto() {
+    public MainPage checkLinksInDropDownMenuBackEndTestAuto() {
         wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
         wait.until(ExpectedConditions.elementToBeClickable(buttonBackEndTestingAuto)).click();
         wait.until(ExpectedConditions.elementToBeClickable(linkRestAssured)).click();
@@ -253,7 +260,7 @@ public class MainPage extends BaseSeleniumPage {
     /**
      * this method check links in drop down menu MobileTestAuto
      */
-    public MainPage goToLinkInDropDownMenuMobileTestAuto() {
+    public MainPage checkLinkInDropDownMenuMobileTestAuto() {
         wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
         wait.until(ExpectedConditions.elementToBeClickable(buttonMobileTestingAutomation)).click();
         wait.until(ExpectedConditions.elementToBeClickable(linkAppiumStudio)).click();
@@ -266,7 +273,7 @@ public class MainPage extends BaseSeleniumPage {
      * this method check links in drop down menu Frameworks&Libraries
      */
 
-    public MainPage goToLinkInDropDownMenuFrameworksLibraries() {
+    public MainPage checkLinkInDropDownMenuFrameworksLibraries() {
         wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
         wait.until(ExpectedConditions.elementToBeClickable(buttonFrameworksAndLibraries)).click();
         wait.until(ExpectedConditions.elementToBeClickable(linkCucumber)).click();
@@ -303,7 +310,7 @@ public class MainPage extends BaseSeleniumPage {
      * this method check links in drop down menu Devops Tools
      */
 
-    public MainPage goToLinkInDropDownMenuDevopsTools() {
+    public MainPage checkLinkInDropDownMenuDevopsTools() {
         wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
         wait.until(ExpectedConditions.elementToBeClickable(buttonDevopsTools)).click();
         wait.until(ExpectedConditions.elementToBeClickable(linkMaven)).click();
@@ -324,5 +331,30 @@ public class MainPage extends BaseSeleniumPage {
         return this;
     }
 
+
+    public MainPage checkLinkInDropDownMenuCrossBrowserTesting() {
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonCrossBrowserTesting)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkLambdaTest)).click();
+        Assert.assertEquals("url LambdaTest", ConfigProvider.URL_LAMBDA_TEST, driver.getCurrentUrl());
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonCrossBrowserTesting)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkCrossBrowserTestingSmartBear)).click();
+        Assert.assertEquals("url Cross Browser Testing-SmartBear", ConfigProvider.URL_CROSS_BROWSER_TESTING, driver.getCurrentUrl());
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonCrossBrowserTesting)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkBrowserling)).click();
+        Assert.assertEquals("url Browseling", ConfigProvider.URL_BROWSELING, driver.getCurrentUrl());
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
+
+
+
+
+        return this;
+    }
 
 }
