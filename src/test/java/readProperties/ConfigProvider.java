@@ -57,9 +57,7 @@ public interface ConfigProvider {
     String URL_LAMBDA_TEST = readConfig().getString("links.linkLambdaTest");
     String URL_CROSS_BROWSER_TESTING = readConfig().getString("links.linkCrossBrowserTesting");
     String URL_BROWSELING = readConfig().getString("links.linkBrowserling");
-
-
-
+    String URL_JMETER = readConfig().getString("links.linkJmeter");
 
 
 }

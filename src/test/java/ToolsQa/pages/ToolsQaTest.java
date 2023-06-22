@@ -36,6 +36,7 @@ public class ToolsQaTest extends BaseSeleniumTest {
         mainPage.checkLinkInDropDownMenuFrameworksLibraries();
         mainPage.checkLinkInDropDownMenuDevopsTools();
         mainPage.checkLinkInDropDownMenuCrossBrowserTesting();
+        mainPage.checkLinkInDropDownMenuNonFunctionalTesting();
 
 
 
