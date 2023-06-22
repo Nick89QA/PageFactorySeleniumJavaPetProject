@@ -147,6 +147,8 @@ public class MainPage extends BaseSeleniumPage {
     @FindBy(xpath = "//div/ul/li/a[@title='Browserling']")
     private WebElement linkBrowserling;
 
+    @FindBy(xpath = "//div/ul/li/a[@title='JMeter']")
+    private WebElement linkJmeter;
 
     public MainPage() {
         driver.get(ConfigProvider.URL_MAIN_PAGE);
@@ -350,11 +352,15 @@ public class MainPage extends BaseSeleniumPage {
         wait.until(ExpectedConditions.elementToBeClickable(linkBrowserling)).click();
         Assert.assertEquals("url Browseling", ConfigProvider.URL_BROWSELING, driver.getCurrentUrl());
         wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
-
-
-
-
         return this;
     }
 
+    public MainPage checkLinkInDropDownMenuNonFunctionalTesting() {
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonNonFunctionalTesting)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkJmeter)).click();
+        Assert.assertEquals("url Jmeter", ConfigProvider.URL_JMETER, driver.getCurrentUrl());
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
+        return this;
+    }
 }
