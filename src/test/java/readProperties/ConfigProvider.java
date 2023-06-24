@@ -59,6 +59,12 @@ public interface ConfigProvider {
     String URL_BROWSELING = readConfig().getString("links.linkBrowserling");
     String URL_JMETER = readConfig().getString("links.linkJmeter");
 
+    String URL_JAVA = readConfig().getString("links.linkJava");
+
+    String URL_DATA_STRUCTURE = readConfig().getString("links.linkDataStructure");
+    String URL_PYTHON = readConfig().getString("links.linkPython");
+    String URL_JAVASCRIPT = readConfig().getString("links.linkJavascript");
+
 
 }
 

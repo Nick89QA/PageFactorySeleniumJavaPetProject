@@ -150,6 +150,20 @@ public class MainPage extends BaseSeleniumPage {
     @FindBy(xpath = "//div/ul/li/a[@title='JMeter']")
     private WebElement linkJmeter;
 
+    @FindBy(xpath = "//div/ul/li/a[@title='Java']")
+    private WebElement linkJava;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='Data Structures']")
+    private WebElement linkDataStructure;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='Python']")
+    private WebElement linkPython;
+
+    @FindBy(xpath = "//div/ul/li/a[@title='JavaScript']")
+    private WebElement linkJavaScript;
+
+
+
     public MainPage() {
         driver.get(ConfigProvider.URL_MAIN_PAGE);
         PageFactory.initElements(driver, this);
@@ -363,4 +377,37 @@ public class MainPage extends BaseSeleniumPage {
         wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
         return this;
     }
+
+    public MainPage checkLinksInDropDownMenuProgrammingLanguage() {
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonProgrammingLanguage)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkJava)).click();
+        Assert.assertEquals("url Java", ConfigProvider.URL_JAVA, driver.getCurrentUrl());
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonProgrammingLanguage)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkDataStructure)).click();
+        Assert.assertEquals("url Data Structure", ConfigProvider.URL_DATA_STRUCTURE, driver.getCurrentUrl());
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonProgrammingLanguage)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkPython)).click();
+        Assert.assertEquals("url Python", ConfigProvider.URL_PYTHON, driver.getCurrentUrl());
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTutorials)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonProgrammingLanguage)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkJavaScript)).click();
+        Assert.assertEquals("url JavaScript", ConfigProvider.URL_JAVASCRIPT, driver.getCurrentUrl());
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
+
+
+
+
+
+        return this;
+    }
+
 }
