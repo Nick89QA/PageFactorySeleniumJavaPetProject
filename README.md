@@ -4,3 +4,4 @@
   framework for testing UI "Selenium",
   framework for testing Java apps is "Junit"
   dependency management tool is "Maven"
+3. Also, I used BDD framework Cucumber
