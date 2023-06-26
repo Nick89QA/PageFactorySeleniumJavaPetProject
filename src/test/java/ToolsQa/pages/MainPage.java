@@ -163,7 +163,6 @@ public class MainPage extends BaseSeleniumPage {
     private WebElement linkJavaScript;
 
 
-
     public MainPage() {
         driver.get(ConfigProvider.URL_MAIN_PAGE);
         PageFactory.initElements(driver, this);
@@ -402,9 +401,6 @@ public class MainPage extends BaseSeleniumPage {
         wait.until(ExpectedConditions.elementToBeClickable(linkJavaScript)).click();
         Assert.assertEquals("url JavaScript", ConfigProvider.URL_JAVASCRIPT, driver.getCurrentUrl());
         wait.until(ExpectedConditions.elementToBeClickable(buttonHome)).click();
-
-
-
 
 
         return this;

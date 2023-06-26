@@ -1,4 +1,5 @@
 package ToolsQa.pages;
+
 import core.BaseSeleniumTest;
 import org.junit.Test;
 import readProperties.ConfigProvider;
@@ -38,7 +39,6 @@ public class ToolsQaTest extends BaseSeleniumTest {
 //        mainPage.checkLinkInDropDownMenuCrossBrowserTesting();
 //        mainPage.checkLinkInDropDownMenuNonFunctionalTesting();
         mainPage.checkLinksInDropDownMenuProgrammingLanguage();
-
 
 
     }
