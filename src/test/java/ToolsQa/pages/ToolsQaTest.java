@@ -30,14 +30,14 @@ public class ToolsQaTest extends BaseSeleniumTest {
     @Test
     public void checkAllTheLinksInDropDownMenu() {
         MainPage mainPage = new MainPage();
-//        mainPage.checkLinksInDropDownMenuQaPractices();
-//        mainPage.checkLinksInDropDownMenuFrontEndTestingAuto();
-//        mainPage.checkLinksInDropDownMenuBackEndTestAuto();
-//        mainPage.checkLinkInDropDownMenuMobileTestAuto();
-//        mainPage.checkLinkInDropDownMenuFrameworksLibraries();
-//        mainPage.checkLinkInDropDownMenuDevopsTools();
-//        mainPage.checkLinkInDropDownMenuCrossBrowserTesting();
-//        mainPage.checkLinkInDropDownMenuNonFunctionalTesting();
+        mainPage.checkLinksInDropDownMenuQaPractices();
+        mainPage.checkLinksInDropDownMenuFrontEndTestingAuto();
+        mainPage.checkLinksInDropDownMenuBackEndTestAuto();
+        mainPage.checkLinkInDropDownMenuMobileTestAuto();
+        mainPage.checkLinkInDropDownMenuFrameworksLibraries();
+        mainPage.checkLinkInDropDownMenuDevopsTools();
+        mainPage.checkLinkInDropDownMenuCrossBrowserTesting();
+        mainPage.checkLinkInDropDownMenuNonFunctionalTesting();
         mainPage.checkLinksInDropDownMenuProgrammingLanguage();
 
 
