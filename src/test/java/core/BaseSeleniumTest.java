@@ -17,6 +17,8 @@ abstract public class BaseSeleniumTest {
 
     @Before
     public void setUp() {
+        ChromeOptions options = new ChromeOptions();
+   //     options.addArguments("--headless", "--no-gpu");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
