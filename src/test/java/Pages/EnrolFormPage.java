@@ -1,4 +1,4 @@
-package ToolsQa.pages;
+package Pages;
 
 import core.BaseSeleniumPage;
 import org.openqa.selenium.*;
