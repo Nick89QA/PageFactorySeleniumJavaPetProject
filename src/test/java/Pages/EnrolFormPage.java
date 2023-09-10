@@ -15,7 +15,6 @@ import java.time.Duration;
 public class EnrolFormPage extends BaseSeleniumPage {
     Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(4));
 
-  //  WebDriverWait wait = new WebDriverWait(driver, 4);
     JavascriptExecutor js = (JavascriptExecutor) driver;
 
     @FindBy(xpath = "//div/a[contains(@href, 'selenium-training?q=banner#enroll-form')]")
