@@ -5,12 +5,17 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import readProperties.ConfigProvider;
 
+import java.time.Duration;
+
 
 public class EnrolFormPage extends BaseSeleniumPage {
-    WebDriverWait wait = new WebDriverWait(driver, 4);
+    Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(4));
+
+  //  WebDriverWait wait = new WebDriverWait(driver, 4);
     JavascriptExecutor js = (JavascriptExecutor) driver;
 
     @FindBy(xpath = "//div/a[contains(@href, 'selenium-training?q=banner#enroll-form')]")
