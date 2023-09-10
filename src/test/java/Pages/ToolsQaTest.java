@@ -7,7 +7,7 @@ import readProperties.ConfigProvider;
 
 public class ToolsQaTest extends BaseSeleniumTest {
 
-   @Test
+    @Test
     public void userSearchKeyWord() {
         MainPage mainPage = new MainPage();
         mainPage.searchArticleOnTheMainPage(ConfigProvider.SEARCH_SELENIUM);
