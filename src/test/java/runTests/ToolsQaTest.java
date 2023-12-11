@@ -1,7 +1,9 @@
-package Pages;
+package runTests;
 
 import core.BaseSeleniumTest;
 import org.junit.Test;
+import pages.EnrolFormPage;
+import pages.MainPage;
 import readProperties.ConfigProvider;
 
 
