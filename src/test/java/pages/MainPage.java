@@ -1,4 +1,4 @@
-package Pages;
+package pages;
 
 import core.BaseSeleniumPage;
 import org.junit.Assert;
